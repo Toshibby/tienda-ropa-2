@@ -1,0 +1,12 @@
+server:
+  port: 7070
+spring:
+  application:
+    name: ms-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Toshibby/tienda-ropa-2.git # ruta del repositorio git
+          searchPaths: config-data
+          default-label: main
