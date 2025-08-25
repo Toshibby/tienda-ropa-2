@@ -5,21 +5,3 @@ spring:
     active: development
   config:
     import: optional:configserver:http://root:123456@localhost:7070
-
-
-
-
-#spring.application.name=ms-cliente
-## Puerto (opcional, si quieres cambiar)
-#
-#
-## Configuración de la base de datos
-#spring.datasource.url=jdbc:mysql://localhost:3306/clientes_ropa?useSSL=false&serverTimezone=UTC
-#spring.datasource.username=root
-#spring.datasource.password=topgym123
-#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-#
-## Configuración JPA
-#spring.jpa.hibernate.ddl-auto=update
-#spring.jpa.show-sql=true
-#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
