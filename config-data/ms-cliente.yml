@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: ms-cliente
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/clientes_ropa
+    username: root
+    password: topgym123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
+
+# Swagger OpenAPI
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
