@@ -24,7 +24,9 @@ spring:
             - id: ms-cliente
               uri: lb://ms-cliente
               predicates:
-                - Path=/api/clientes/**
+                - Path=/clientes/**
+              filters:
+                - StripPrefix=1
             - id: tienda-ropa
               uri: lb://tienda-ropa
               predicates:
@@ -32,8 +34,8 @@ spring:
 
 
               # Si tu servicio real no expone /categoria/...:
-              # filters:
-              #   - StripPrefix=1
+#               filters:
+#                 - StripPrefix=1
 #server:
 #  port: 9090
 #
