@@ -19,8 +19,8 @@ spring:
         locator:
           enable: true
       routes:
-        - id: ms-client
-          uri: lb://ms-client
+        - id: ms-cliente
+          uri: lb://ms-cliente
           predicates:
             - Path=/clientes/**
         - id: tienda-ropa
