@@ -1,7 +1,6 @@
 server:
   port: 9090
 
-
 eureka:
   client:
     serviceUrl:
@@ -9,21 +8,58 @@ eureka:
   instance:
     hostname: localhost
 
-
 spring:
+  application:
+    name: ms-gateway-server
+
   cloud:
-
-
     gateway:
-      discovery:
-        locator:
-          enable: true
-      routes:
-        - id: ms-cliente
-          uri: lb://MS-CLIENTE
-          predicates:
-            - Path=/api/clientes/**
-        - id: tienda-ropa
-          uri: lb://TIENDA-ROPA
-          predicates:
-            - Path=/categorias/**
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: ms-cliente
+              uri: lb://MS-CLIENTE
+              predicates:
+                - Path=/api/clientes/**
+            - id: tienda-ropa
+              uri: lb://TIENDA-ROPA
+              predicates:
+                - Path=/categorias/**
+
+
+              # Si tu servicio real no expone /categoria/...:
+              # filters:
+              #   - StripPrefix=1
+#server:
+#  port: 9090
+#
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8090/eureka
+#  instance:
+#    hostname: localhost
+#
+#
+#spring:
+#  cloud:
+#
+#
+#    gateway:
+#      discovery:
+#        locator:
+#          enable: true
+#      routes:
+#        - id: ms-cliente
+#          uri: lb://MS-CLIENTE
+#          predicates:
+#            - Path=/api/clientes/**
+#        - id: tienda-ropa
+#          uri: lb://TIENDA-ROPA
+#          predicates:
+#            - Path=/categorias/**
