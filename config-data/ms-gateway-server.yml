@@ -22,7 +22,7 @@ spring:
         - id: ms-cliente
           uri: lb://ms-cliente
           predicates:
-            - Path=/clientes/**
+            - Path=/api/clientes/**
         - id: tienda-ropa
           uri: lb://tienda-ropa
           predicates:
