@@ -20,10 +20,10 @@ spring:
           enable: true
       routes:
         - id: ms-cliente
-          uri: lb://ms-cliente
+          uri: lb://MS-CLIENTE
           predicates:
             - Path=/api/clientes/**
         - id: tienda-ropa
-          uri: lb://tienda-ropa
+          uri: lb://TIENDA-ROPA
           predicates:
             - Path=/categorias/**
