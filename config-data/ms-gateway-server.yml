@@ -22,11 +22,11 @@ spring:
               lower-case-service-id: true
           routes:
             - id: ms-cliente
-              uri: lb://MS-CLIENTE
+              uri: lb://ms-cliente
               predicates:
                 - Path=/api/clientes/**
             - id: tienda-ropa
-              uri: lb://TIENDA-ROPA
+              uri: lb://tienda-ropa
               predicates:
                 - Path=/categorias/**
 
